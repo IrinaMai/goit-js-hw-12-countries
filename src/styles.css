@@ -17,7 +17,9 @@ body {
 }
 
 .search__input {
+  font-size: large;
   display: block;
+  padding: 15px;
   margin: 50px;
   width: 500px;
   height: 70px;
@@ -28,6 +30,18 @@ body {
 .country {
   display: flex;
 }
+.country.is-hidden {
+  display: none;
+}
+
 .item {
   list-style: none;
+}
+.country__ttl {
+  font-size: 25px;
+  margin-right: 50px;
+}
+.flag__img {
+  display: block;
+  width: 500px;
 }
