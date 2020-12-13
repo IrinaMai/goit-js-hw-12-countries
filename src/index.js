@@ -9,23 +9,6 @@ import '../node_modules/@pnotify/core/dist/BrightTheme.css'
 import '../node_modules/@pnotify/core/dist/Material.css'
 
 
-
-// const myAlert = alert({
-//  title: 'Attention!!!!',
-//   text: "I'm an alert.",
-//   type: 'info'
-// });
-// console.log(myAlert);
-
-// const myError = error({
-//  title: 'Error',
-//   text: "I'm an error.",
-//   type: 'error'
-// });
-// console.log(myError);
-
-
-
 export const refs = {
     searchInput: document.querySelector('.search__input'),
     wrapper: document.querySelector('.wrapper'),
@@ -41,17 +24,14 @@ const onInputSearch = _.debounce(() => {
 
 
 export function workWithCountryList(countryList) {
-    // let error = ""
-    let choosenCountry = {};
     if (countryList.length === 1) {
-            choosenCountry = {
+        const choosenCountry = {
             name: countryList[0].name,
             capital: countryList[0].capital,
             population: countryList[0].population,
             flag: countryList[0].flag,
             languages: countryList[0].languages.map(item => item.name),
-        }
-
+        };
         refs.country.innerHTML = mycountry(choosenCountry)
         refs.searchInput.value = ""
     };
@@ -68,9 +48,6 @@ export function workWithCountryList(countryList) {
         return (myError)
     };
 };
-
-
-
 
 refs.searchInput.addEventListener('input', onInputSearch);
 
